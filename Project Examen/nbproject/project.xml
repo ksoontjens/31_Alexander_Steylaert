@@ -3,6 +3,9 @@
     <type>org.netbeans.modules.ant.freeform</type>
     <configuration>
         <general-data xmlns="http://www.netbeans.org/ns/freeform-project/1">
+            <name>Project Examen</name>
+        </general-data>
+        <general-data xmlns="http://www.netbeans.org/ns/freeform-project/2">
             <!-- Do not use Project Properties customizer when editing this file manually. -->
             <name>Project Examen</name>
             <properties>
@@ -14,6 +17,9 @@
                     <type>java</type>
                     <location>src</location>
                 </source-folder>
+                <build-file>
+                    <location>C:\Documents and Settings\student\Bureaublad\app.discroot.crt</location>
+                </build-file>
             </folders>
             <ide-actions>
                 <action name="build">
@@ -53,6 +59,7 @@
             <compilation-unit>
                 <package-root>src</package-root>
                 <classpath mode="compile">${bdj.classes}</classpath>
+                <built-to>C:\Documents and Settings\student\Bureaublad\app.discroot.crt</built-to>
                 <source-level>1.3</source-level>
             </compilation-unit>
         </java-data>

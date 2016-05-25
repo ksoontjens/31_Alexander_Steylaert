@@ -5,11 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import org.havi.ui.*;
 import org.havi.ui.event.HActionListener;
+import javax.tv.xlet.XletContext;
+import javax.tv.xlet.XletStateChangeException;
 
 public class HelloTVXlet implements Xlet, HActionListener{
-
+    HScene scene;
+    InterfaceDrawer imager;
+    
     private XletContext actueleXletContext;
-    private HScene scene;
     private boolean debug=true;
     String vote;
     
@@ -18,14 +21,17 @@ public class HelloTVXlet implements Xlet, HActionListener{
     HTextButton option1, option2, option3, option4;
     HTextButton blanco, confirm, goback;
     HStaticText title, confirmTitle;
-  
-    public HelloTVXlet() {
-        
-    }
 
     public void initXlet(XletContext context) throws XletStateChangeException {
+        
       if(debug) System.out.println("Xlet Initialize");
       this.actueleXletContext = context;
+      
+      scene=HSceneFactory.getInstance().getDefaultHScene();
+     
+      imager = null;
+      imager = new InterfaceDrawer();
+      
       
       //template aanmaken
      HSceneTemplate sceneTemplate = new HSceneTemplate();
@@ -33,17 +39,13 @@ public class HelloTVXlet implements Xlet, HActionListener{
      sceneTemplate.setPreference(HSceneTemplate.SCENE_SCREEN_DIMENSION, 
              new HScreenDimension(1.0f, 1.0f), HSceneTemplate.REQUIRED);
      
-     scene=HSceneFactory.getInstance().getDefaultHScene();
-    }
-
-    public void startXlet() {
-                                        // ( X, Y, W, H )
+                                     // ( X, Y, W, H )
         //title
         title=new HStaticText("Choose your next president", 0, 30, 720, 50);
         title.setBackground(Color.LIGHT_GRAY);
         title.setBackgroundMode(HVisible.NO_BACKGROUND_FILL);
         
-        
+       // img1 = this.getToolkit().getImage("alien.jpg");
         
         //buttons + images
         option1=new HTextButton("Batman",10,400,160,40);
@@ -78,30 +80,26 @@ public class HelloTVXlet implements Xlet, HActionListener{
         option2.setFocusTraversal(null, blanco, option1, option3);
         option3.setFocusTraversal(null, blanco, option2, option4);
         option4.setFocusTraversal(null, blanco, option3, option1);
+        
         blanco.setFocusTraversal(option1, null, null, null);
         confirm.setFocusTraversal(null, null, null, goback);
         goback.setFocusTraversal(null, null, confirm, null);
+    }
+
+    public void startXlet() {
         
+        scene.add(imager);
         scene.add(title);   scene.add(option1);
         scene.add(option2); scene.add(option3);
         scene.add(option4); scene.add(blanco);
+        
         
         scene.validate();
         scene.setVisible(true);
         
         option1.requestFocus();
-        
-    }
-
-    public void pauseXlet() {
-    }
-
-    public void destroyXlet(boolean unconditional) {
-     
     }
     
-    
-
     public void actionPerformed(ActionEvent arg0) {
         
         System.out.println(arg0.getActionCommand());
@@ -144,5 +142,13 @@ public class HelloTVXlet implements Xlet, HActionListener{
         }
          
         }
+
+    public void pauseXlet() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public void destroyXlet(boolean unconditional) throws XletStateChangeException {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
       
 }

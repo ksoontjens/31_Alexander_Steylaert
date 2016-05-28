@@ -1,27 +1,19 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package hellotvxlet;
 import java.awt.*;
 import org.havi.ui.*;
 
 /**
  *
- * @author student
+ * @author Alexander Steyaert & Sven Aerts
  */
+
 public class InterfaceDrawer extends HComponent {
     private Image img1, img2, img3, img4;
     private MediaTracker mt;
-    Color back = HelloTVXlet.blue;
+    Color back = VoteMachine.blue;
     
-    
-    
-    public InterfaceDrawer(String test)
-    {
-        System.out.println("out: "+test);
-        
+    public InterfaceDrawer()
+    {   
         img1 = this.getToolkit().getImage("project/batman.png");
         img2 = this.getToolkit().getImage("project/alien.png");
         img3 = this.getToolkit().getImage("project/johnney bravo.png");
@@ -37,20 +29,16 @@ public class InterfaceDrawer extends HComponent {
         
         try {
         mt.waitForAll();
-        if(HelloTVXlet.debug){
+        if(VoteMachine.debug){
             System.out.println("Succes: MT");
         }
         } catch (Exception ex) {
-        if(HelloTVXlet.debug){
+        if(VoteMachine.debug){
             System.out.println("Error: mediatracker ("+ex.toString()+")");
         }
         }
         
-        
         this.setBounds(0,0,720,576);
-        
-        
-        
     }
     
     public void paint(Graphics g)
@@ -69,7 +57,7 @@ public class InterfaceDrawer extends HComponent {
         g.fillRoundRect (545, 200, 170, 205, 5, 5);
         g.drawImage(img4, 550, 200, null);
         
-        if(HelloTVXlet.debug){
+        if(VoteMachine.debug){
             System.out.println("Succes: paint");
         }
     }

@@ -1,0 +1,7 @@
+public class Factuur implements Betaalbaar()
+{
+  void public betaal()
+  {
+    System.out.println("Betaal dit factuur");
+  }
+}

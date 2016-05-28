@@ -1,0 +1,7 @@
+public interface Betaalbaar
+{
+  public void Betaal()
+  {
+    
+  }
+}

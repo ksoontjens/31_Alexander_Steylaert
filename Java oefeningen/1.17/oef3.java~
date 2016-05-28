@@ -1,0 +1,16 @@
+import java.lang.*;
+
+/**
+ * Getal PI
+ * @author Alexander Steyaert
+ * @version v0.1
+ */
+
+public class oef3 {
+  
+  /**
+   * Hoofdmethode
+   * @param
+   */
+  public static void main (String args[])
+  {

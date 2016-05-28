@@ -1,0 +1,22 @@
+import java.lang.*;
+
+/**
+ * Priemgetallej
+ * @author Alexander Steyaert
+ * @version v0.1
+ */
+
+public class oef5 {
+  
+  /**
+   * Hoofdmethode
+   * @param
+   */
+  public static void main (String args[])
+  {
+    for(i=3; i<100; i++)
+    {
+      System.out.println(i%5);
+    }
+  }
+}

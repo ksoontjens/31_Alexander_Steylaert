@@ -1,0 +1,12 @@
+public class Werknemersoef {
+  
+  public static void main( String arg[] )
+  {
+    Werknemer jan = new Werknemer( "jan", "janssens", 1, 900.0f );
+    
+    System.out.println(jan.voornaam + " verdient " + jan.getSalaris());
+    
+  }
+  
+  
+}

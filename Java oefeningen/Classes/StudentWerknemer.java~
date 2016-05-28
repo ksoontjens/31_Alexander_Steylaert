@@ -1,0 +1,12 @@
+public class StudentWerknemer extends PartTimeWerknemer {
+  
+  
+  private float RSZpercentage;
+  
+  public StudentWerknemer( String voornaam, String achternaam, 
+                            int nr, float sal, int urengw)
+  {
+    super(voornaam, achternaam, nr, sal, urengw);
+    this.RSZpercentage = 5.0f;
+  }
+}

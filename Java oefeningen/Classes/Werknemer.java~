@@ -1,0 +1,25 @@
+public class Werknemer {
+  
+  public String voornaam;
+  public String achternaam;
+  public int werknemerNummer;
+  protected float salaris;
+  
+  public Werknemer( String voornaam, String achternaam, int wNummer, float sal)
+  {
+    werknemerNummer=wNummer;
+    this.voornaam=voornaam;
+    this.achternaam=achternaam;
+    salaris=sal;
+  }
+  
+  public void salarisVerhogen(int percentage)
+  {
+    salaris+=salaris*(percentage/100.0);
+  }
+  
+  public float getSalaris()
+  {
+    return salaris;
+  }
+}
